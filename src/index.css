@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body { @apply bg-paper text-ink font-sans antialiased; font-feature-settings: 'cv11', 'ss01'; }
+  ::selection { background: #2B4BD8; color: #fff; }
+  :focus-visible { outline: 2px solid #2B4BD8; outline-offset: 3px; border-radius: 4px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+}
+
+@layer components {
+  .page { @apply mx-auto w-full max-w-page px-5 sm:px-8; }
+  .eyebrow { @apply font-mono text-xs uppercase tracking-[0.12em] text-muted; }
+  .h-display { @apply font-serif text-[2.6rem] leading-[1.08] sm:text-6xl md:text-[4.25rem]; }
+  .h-section { @apply font-serif text-3xl leading-tight sm:text-4xl; }
+  .prose-body { @apply text-[17px] leading-[1.7] text-ink-soft; }
+  .card { @apply rounded-2xl border border-line bg-card; }
+  .link-u { @apply underline decoration-line underline-offset-4 transition-colors hover:decoration-accent; }
+  .bg-grid {
+    background-image: linear-gradient(to right, rgba(23,24,27,.045) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(23,24,27,.045) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+}
